@@ -1,0 +1,24 @@
+<!-- views/fruits/new.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create a Bird</title>
+  </head>
+
+  <body>
+    <h1>Create a New Bird!</h1>
+    <form action="/birds" method="POST">
+      <label for="name">Name:</label>
+      <input type="text" name="name" id="name" />
+
+      <label for="isReadyToFly">Ready to Fly?</label>
+      <input type="checkbox" name="isReadyToFly" id="isReadyToFly" />
+
+      <button type="submit">Add Bird</button>
+    </form>
+    <a href="/birds">Back to view all birds</a>
+  </body>
+</html>

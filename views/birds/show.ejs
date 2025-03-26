@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bird Show Page</title>
+  </head>
+  <body>
+    <h4>Here Is Your Bird</h4>
+    <h1><%= bird.name %></h1>
+    <% if (bird.isReadyToFly) { %>
+      <p>This bird is ready to take to the sky!</p>
+    <% } else { %>
+      <p>This bird's wings are just for show!</p>
+    <% } %>
+    <form action="/birds/<%= bird._id %>?_method=DELETE" method="POST">
+      <button type="submit">Delete <%= bird.name %></button>
+    </form>
+    <a href="/birds/<%= bird._id %>/edit">Edit bird</a>
+    <a href="/birds">Go back to birds</a>
+  </body>
+</html>
