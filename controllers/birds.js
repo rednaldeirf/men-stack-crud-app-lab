@@ -27,13 +27,13 @@ birdsRouter.get("/birds/:id", async (req, res) => {
   res.render("birds/show", { bird });
 });
 
-// Get all fruits
+// Get all birds
 birdsRouter.get("/birds", async (req, res) => {
   const birds = await Bird.find({});
   res.render("birds/index", { birds });
 });
 
-// Create a fruit
+// Create a bird
 birdsRouter.post("/birds", async (req, res) => {
   let { name, isReadyToFly } = req.body;
 
@@ -62,11 +62,11 @@ birdsRouter.put("/birds/:id", async (req, res) => {
     updateData.isReadyToFly = false;
   }
 
-  // Get the fruit and update it
+  // Get the bird and update it
   await Bird.findByIdAndUpdate(id, updateData, {
     returnDocument: "after",
   });
-  // redirect to fruit
+  // redirect to bird
   res.redirect(`/birds/${id}`);
 });
 
